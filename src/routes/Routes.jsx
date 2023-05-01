@@ -17,13 +17,16 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Category></Category>,
-        loader: () => fetch("http://localhost:5000/news"),
+        loader: () =>
+          fetch("https://the-news-dragon-server-naimuralltime.vercel.app/news"),
       },
       {
         path: "/category/:id",
         element: <Category></Category>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/categories/${params.id}`),
+          fetch(
+            `https://the-news-dragon-server-naimuralltime.vercel.app/categories/${params.id}`
+          ),
       },
     ],
   },
@@ -39,7 +42,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/news/${params.id}`),
+          fetch(
+            `https://the-news-dragon-server-naimuralltime.vercel.app/news/${params.id}`
+          ),
       },
     ],
   },
