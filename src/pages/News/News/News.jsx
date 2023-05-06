@@ -3,9 +3,13 @@ import { Button, Card } from "react-bootstrap";
 import { BiLeftArrowAlt } from "react-icons/bi";
 import { Link, useLoaderData } from "react-router-dom";
 import EditorsInsaight from "../EditorsInsight/EditorsInsaight";
+import useTitle from "./../../../hooks/useTitle";
 
 const News = () => {
   const news = useLoaderData();
+
+  useTitle("Details");
+
   const { category_id, title, image_url, details } = news;
   // console.log(news);
   return (

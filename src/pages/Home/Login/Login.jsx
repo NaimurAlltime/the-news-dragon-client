@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import useTitle from "../../../hooks/useTitle";
 import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Login = () => {
@@ -9,6 +10,8 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
+
+  useTitle("Login");
 
   const { SignInUser } = useContext(AuthContext);
   const handleLogin = (event) => {
